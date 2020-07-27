@@ -7,7 +7,8 @@ namespace Trestlebridge.Actions {
     public class CreateFacility {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Grazing field");
-            Console.WriteLine ("2. Plowed field");
+            Console.WriteLine ("2. Chicken House");
+            Console.WriteLine ("4. Plowed field");
 
             Console.WriteLine ();
             Console.WriteLine ("Choose what you want to create");
@@ -19,6 +20,9 @@ namespace Trestlebridge.Actions {
             {
                 case 1:
                     farm.AddGrazingField(new GrazingField());
+                    break;
+                case 2:
+                    farm.AddChickenHouse(new ChickenHouse());
                     break;
                 default:
                     break;
