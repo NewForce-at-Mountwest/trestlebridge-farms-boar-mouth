@@ -11,6 +11,8 @@ namespace Trestlebridge.Models
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
         public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
 
+        //List of Chicken House facilities
+        public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
 
         /*
@@ -24,6 +26,9 @@ namespace Trestlebridge.Models
             {
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
+                case "Chicken":
+                    ChickenHouses[index].AddResource((ICluck)resource);
                     break;
                 default:
                     break;
@@ -46,14 +51,23 @@ namespace Trestlebridge.Models
             PlowedFields.Add(field);
         }
 
+        //Method to Add Chicken House
+        public void AddChickenHouse (ChickenHouse house)
+        {
+            ChickenHouses.Add(house);
+        }
+
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
+            
             PlowedFields.ForEach(pf => report.Append(pf));
-//Prints report of duckhouses for user when user presses 4 in the main menu
+            //Prints report of duckhouses for user when user presses 4 in the main menu
             DuckHouses.ForEach(dh => report.Append(dh));
+            //Prints number of chickens in each chicken house on farm report
+            ChickenHouses.ForEach(ch => report.Append(ch));
 
             return report.ToString();
         }
