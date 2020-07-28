@@ -10,6 +10,9 @@ namespace Trestlebridge.Models
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
         public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
+
+        public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
+
         /*
             This method must specify the correct product interface of the
             resource being purchased.
@@ -29,7 +32,14 @@ namespace Trestlebridge.Models
 
         public void AddGrazingField (GrazingField field)
         {
-            GrazingFields.Add(field);
+            GrazingFields.Add(field); 
+            
+        }
+
+          public void AddDuckHouse (DuckHouse field)
+        {
+            DuckHouses.Add(field); 
+            
         }
         public void AddPlowedField (PlowedField field)
         {
@@ -42,6 +52,8 @@ namespace Trestlebridge.Models
 
             GrazingFields.ForEach(gf => report.Append(gf));
             PlowedFields.ForEach(pf => report.Append(pf));
+//Prints report of duckhouses for user when user presses 4 in the main menu
+            DuckHouses.ForEach(dh => report.Append(dh));
 
             return report.ToString();
         }
