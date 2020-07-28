@@ -20,7 +20,10 @@ namespace Trestlebridge.Actions {
                 case 1:
                     farm.AddGrazingField(new GrazingField());
                     break;
-                default:
+                case 2:
+                farm.AddPlowedField(new PlowedField());
+                Console.WriteLine("You have created a new plowed field! Please press enter to return to the main menu.");
+                Console.ReadLine();
                     break;
             }
         }
