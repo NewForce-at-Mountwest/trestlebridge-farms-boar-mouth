@@ -12,6 +12,8 @@ namespace Trestlebridge.Models
 
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
 
+        public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
+
         /*
             This method must specify the correct product interface of the
             resource being purchased.
@@ -26,6 +28,12 @@ namespace Trestlebridge.Models
                     break;
                 case "Chicken":
                     ChickenHouses[index].AddResource((ICluck)resource);
+                    break;
+                case "Sunflower":
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
+                    break;
+                case "Wildflower":
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
                     break;
                 default:
                     break;
@@ -42,6 +50,11 @@ namespace Trestlebridge.Models
             ChickenHouses.Add(house);
         }
 
+        public void AddNaturalField (NaturalField field)
+        {
+           NaturalFields.Add(field);
+        }
+
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
@@ -49,6 +62,8 @@ namespace Trestlebridge.Models
             GrazingFields.ForEach(gf => report.Append(gf));
 
             ChickenHouses.ForEach(ch => report.Append(ch));
+
+            NaturalFields.ForEach(nf => report.Append(nf));
 
             return report.ToString();
         }
