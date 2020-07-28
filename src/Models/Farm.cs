@@ -9,8 +9,9 @@ namespace Trestlebridge.Models
     public class Farm
     {
         public List<GrazingField> GrazingFields { get; } = new List<GrazingField>();
+        //List of natural fields on farm
+        public List<NaturalField> NaturalFields { get; } = new List<NaturalField>();
         public List<PlowedField> PlowedFields { get; } = new List<PlowedField>();
-
         //List of Chicken House facilities
         public List<ChickenHouse> ChickenHouses { get; } = new List<ChickenHouse>();
         public List<DuckHouse> DuckHouses { get; } = new List<DuckHouse>();
@@ -29,6 +30,12 @@ namespace Trestlebridge.Models
                     break;
                 case "Chicken":
                     ChickenHouses[index].AddResource((ICluck)resource);
+                    break;
+                case "Sunflower":
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
+                    break;
+                case "Wildflower":
+                    NaturalFields[index].AddResource((ICompostProducing)resource);
                     break;
                 default:
                     break;
@@ -57,6 +64,12 @@ namespace Trestlebridge.Models
             ChickenHouses.Add(house);
         }
 
+        //Method to add natural field to farm
+        public void AddNaturalField (NaturalField field)
+        {
+           NaturalFields.Add(field);
+        }
+
         public override string ToString()
         {
             StringBuilder report = new StringBuilder();
@@ -68,6 +81,8 @@ namespace Trestlebridge.Models
             DuckHouses.ForEach(dh => report.Append(dh));
             //Prints number of chickens in each chicken house on farm report
             ChickenHouses.ForEach(ch => report.Append(ch));
+            //Prints plants in each natural field to the report
+            NaturalFields.ForEach(nf => report.Append(nf));
 
             return report.ToString();
         }
