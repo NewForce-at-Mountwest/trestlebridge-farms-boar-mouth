@@ -7,9 +7,11 @@ using Trestlebridge.Interfaces;
 namespace Trestlebridge.Models.Facilities {
     public class ChickenHouse : IFacility<ICluck>
     {
+        //Capacity of facility
         private int _capacity = 15;
         private Guid _id = Guid.NewGuid();
 
+        //List of chickens in facility
         private List<ICluck> chickens = new List<ICluck>();
 
         public double Capacity {
@@ -18,6 +20,7 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        //Adding chickens to chicken house
         public void AddResource(ICluck resource)
         {
             chickens.Add(resource);
@@ -28,6 +31,7 @@ namespace Trestlebridge.Models.Facilities {
             throw new NotImplementedException();
         }
 
+        //Converting chickens in chicken house to a string that can be printed in the farm report
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
