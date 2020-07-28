@@ -8,8 +8,8 @@ namespace Trestlebridge.Actions {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Grazing field");
             Console.WriteLine ("2. Plowed field");
-
-            Console.WriteLine("4. Duck House");
+            Console.WriteLine ("3. Chicken House");
+            Console.WriteLine ("4. Duck House");
 
             Console.WriteLine ();
             Console.WriteLine ("Choose what you want to create");
@@ -29,17 +29,24 @@ namespace Trestlebridge.Actions {
                     Console.ReadLine();
                     break;
                 case 2:
-                farm.AddPlowedField(new PlowedField());
-                Console.WriteLine("You have created a new plowed field! Please press enter to return to the main menu.");
-                Console.ReadLine();
-                break;
+                    farm.AddPlowedField(new PlowedField());
+                    Console.WriteLine("You have created a new plowed field! Please press enter to return to the main menu.");
+                    Console.ReadLine();
+                    break;
+                case 3:
+                    farm.AddChickenHouse(new ChickenHouse());
+                    Console.WriteLine("Thank you for adding a Chicken House!");
+                    Console.WriteLine("Press Enter to return to the Main Menu");
+                    Console.Write(">");
+                    Console.ReadLine();
+                    break;
                 case 4:
-                farm.AddDuckHouse(new DuckHouse());
-                Console.WriteLine("Thank you for adding a Duck House!");
-                Console.WriteLine("Press Enter to return to the Main Menu");
-                Console.WriteLine(">_");
-                Console.ReadLine();
-                break;
+                    farm.AddDuckHouse(new DuckHouse());
+                    Console.WriteLine("Thank you for adding a Duck House!");
+                    Console.WriteLine("Press Enter to return to the Main Menu");
+                    Console.WriteLine(">_");
+                    Console.ReadLine();
+                    break;
                 default:
                     break;
             }
