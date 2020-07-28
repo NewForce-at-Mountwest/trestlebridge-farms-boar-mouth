@@ -25,8 +25,7 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource (List<IQuack> resources) 
         {
-            // TODO: implement this...
-            throw new NotImplementedException();
+            ducks.AddRange(resources);
         }
 
 

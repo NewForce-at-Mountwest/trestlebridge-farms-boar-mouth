@@ -9,7 +9,8 @@ namespace Trestlebridge.Actions {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Cow");
             Console.WriteLine ("2. Ostrich");
-            Console.WriteLine ("3. Chicken");
+            Console.WriteLine ("6. Chicken");
+            Console.WriteLine ("7. Duck");
 
 
             Console.WriteLine ();
@@ -26,8 +27,11 @@ namespace Trestlebridge.Actions {
                 case 2:
                     ChooseGrazingField.CollectInput(farm, new Ostrich());
                     break;
-                case 3:
+                case 6:
                     ChooseChickenHouse.CollectInput(farm, new Chicken());
+                    break;
+                case 7:
+                    ChooseDuckHouse.CollectInput(farm, new Duck());
                     break;
                 default:
                     break;
