@@ -29,6 +29,11 @@ namespace Trestlebridge.Actions {
                     Console.WriteLine(">_");
                     Console.ReadLine();
                     break;
+                case 2:
+                    farm.AddPlowedField(new PlowedField());
+                    Console.WriteLine("You have created a new plowed field! Please press enter to return to the main menu.");
+                    Console.ReadLine();
+                    break;
                 case 3:
                     farm.AddChickenHouse(new ChickenHouse());
                     Console.WriteLine("Thank you for adding a Chicken House!");
