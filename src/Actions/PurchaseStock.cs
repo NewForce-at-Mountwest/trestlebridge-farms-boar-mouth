@@ -26,9 +26,15 @@ namespace Trestlebridge.Actions {
             {
                 case 1:
                     ChooseGrazingField.CollectInput(farm, new Cow());
+                    //TODO:: a confirmation message should the almighty Trello cards request it.
+                    // Console.WriteLine("Thank you for placing a cow in a grazing field. Please press enter to return to the Main Menu");
+                    // Console.ReadLine();
                     break;
                 case 2: 
                     ChooseGrazingField.CollectInput(farm, new Pig());
+                    break;
+                case 3: 
+                    ChooseGrazingField.CollectInput(farm, new Goat());
                     break;
                 case 4:
                     ChooseGrazingField.CollectInput(farm, new Ostrich());
