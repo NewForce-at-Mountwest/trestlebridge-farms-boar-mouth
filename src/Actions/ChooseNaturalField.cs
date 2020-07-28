@@ -12,6 +12,7 @@ namespace Trestlebridge.Actions
         {
             Utils.Clear();
 
+            //Prints each available natural field 
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. Natural Field");
@@ -19,12 +20,12 @@ namespace Trestlebridge.Actions
 
             Console.WriteLine();
 
-            // How can I output the type of animal chosen here?
-            Console.WriteLine($"Place the plant where?");
+            Console.WriteLine($"Place the seed where?");
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
+            //Adds the plant/seed to the selected natural field
             farm.NaturalFields[choice].AddResource(plant);
 
             /*

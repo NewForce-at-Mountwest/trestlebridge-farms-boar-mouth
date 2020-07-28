@@ -12,6 +12,7 @@ namespace Trestlebridge.Actions
         {
             Utils.Clear();
 
+            //Prints each chicken house facility available
             for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. Chicken House");
@@ -19,12 +20,12 @@ namespace Trestlebridge.Actions
 
             Console.WriteLine();
 
-            // How can I output the type of animal chosen here?
             Console.WriteLine($"Place the chicken where?");
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
 
+            //Adds chicken to the particular chicken house selected
             farm.ChickenHouses[choice].AddResource(chicken);
 
             /*
