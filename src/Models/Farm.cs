@@ -46,7 +46,7 @@ namespace Trestlebridge.Models
             StringBuilder report = new StringBuilder();
 
             GrazingFields.ForEach(gf => report.Append(gf));
-
+//Prints report of duckhouses for user when user presses 4 in the main menu
             DuckHouses.ForEach(dh => report.Append(dh));
 
             return report.ToString();
