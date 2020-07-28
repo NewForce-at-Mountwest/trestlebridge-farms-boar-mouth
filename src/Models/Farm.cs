@@ -46,6 +46,9 @@ namespace Trestlebridge.Models
                 case "Goat":
                     GrazingFields[index].AddResource((IGrazing)resource);
                     break;
+                case "Sheep":
+                    GrazingFields[index].AddResource((IGrazing)resource);
+                    break;
                 default:
                     break;
             }
