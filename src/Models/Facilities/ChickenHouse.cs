@@ -20,7 +20,7 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource(ICluck resource)
         {
-            throw new NotImplementedException();
+            chickens.Add(resource);
         }
 
         public void AddResource(List<ICluck> resources)

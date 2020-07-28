@@ -40,6 +40,8 @@ namespace Trestlebridge.Models
         public void AddChickenHouse (ChickenHouse house)
         {
             ChickenHouses.Add(house);
+            Console.WriteLine("you created a chicken house.");
+
         }
 
         public override string ToString()
