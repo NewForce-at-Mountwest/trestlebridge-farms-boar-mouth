@@ -29,16 +29,21 @@ namespace Trestlebridge.Models.Facilities {
                 return _capacity;
             }
         }
-
+//attempting to enforce a capacity limit for grazing fields
         public void AddResource (IGrazing animal)
         {
             // TODO: implement this...
+            // if(_animals.Count <= Capacity){
             _animals.Add(animal);
+            // }else{
+            //     Console.WriteLine("This is too full :*(");
+            // }
         }
 
         public void AddResource (List<IGrazing> animals) 
         {
             // TODO: implement this...
+           
             throw new NotImplementedException();
         }
 
