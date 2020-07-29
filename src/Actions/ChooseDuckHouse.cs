@@ -15,7 +15,7 @@ namespace Trestlebridge.Actions
             //Prints each duck house facility available
             for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Duck House ({farm.DuckHouses[i].GetTotalDucks()} ducks)");
+                Console.WriteLine($"{i + 1}. Duck House ({farm.DuckHouses[i].GetTotal()} ducks)");
             }
 
             Console.WriteLine();

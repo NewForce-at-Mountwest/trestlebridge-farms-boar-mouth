@@ -15,7 +15,7 @@ namespace Trestlebridge.Actions
             //Prints each chicken house facility available
             for (int i = 0; i < farm.ChickenHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Chicken House ({farm.ChickenHouses[i].GetTotalChickens()} chickens)");
+                Console.WriteLine($"{i + 1}. Chicken House ({farm.ChickenHouses[i].GetTotal()} chickens)");
             }
 
             Console.WriteLine();

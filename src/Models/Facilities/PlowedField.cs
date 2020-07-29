@@ -30,7 +30,12 @@ namespace Trestlebridge.Models.Facilities {
             throw new NotImplementedException();
         }
 
-           public override string ToString()
+        public int GetTotal()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             string shortId = $"{this._id.ToString().Substring(this._id.ToString().Length - 6)}";

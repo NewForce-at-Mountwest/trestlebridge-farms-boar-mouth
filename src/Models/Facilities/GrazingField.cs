@@ -31,7 +31,7 @@ namespace Trestlebridge.Models.Facilities {
         }
 
         // Gets the total count of animals in each grazing field
-        public int GetTotalAnimals()
+        public int GetTotal()
         {
             return _animals.Count;
         }

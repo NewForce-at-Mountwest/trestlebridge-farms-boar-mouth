@@ -30,7 +30,7 @@ namespace Trestlebridge.Models.Facilities {
         }
 
         //Gets the total count of ducks in each duck house
-        public int GetTotalDucks()
+        public int GetTotal()
         {
             return ducks.Count;
         }
