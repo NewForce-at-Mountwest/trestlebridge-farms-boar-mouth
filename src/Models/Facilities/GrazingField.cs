@@ -47,6 +47,12 @@ namespace Trestlebridge.Models.Facilities {
             throw new NotImplementedException();
         }
 
+        // Gets the total count of animals in each grazing field
+        public int GetTotal()
+        {
+            return _animals.Count;
+        }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();

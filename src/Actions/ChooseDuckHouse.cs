@@ -15,12 +15,12 @@ namespace Trestlebridge.Actions
             //Prints each duck house facility available
             for (int i = 0; i < farm.DuckHouses.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Duck House");
+                Console.WriteLine($"{i + 1}. Duck House ({farm.DuckHouses[i].GetTotal()} ducks)");
             }
 
             Console.WriteLine();
 
-            Console.WriteLine($"Place the duck where?");
+            Console.WriteLine($"Where would you like to place the duck?");
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());

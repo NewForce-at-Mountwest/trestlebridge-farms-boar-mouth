@@ -28,6 +28,11 @@ namespace Trestlebridge.Models.Facilities {
             throw new NotImplementedException();
         }
 
+        public int GetTotal()
+        {
+            throw new NotImplementedException();
+        }
+
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();

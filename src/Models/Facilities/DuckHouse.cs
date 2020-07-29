@@ -29,6 +29,12 @@ namespace Trestlebridge.Models.Facilities {
             ducks.AddRange(resources);
         }
 
+        //Gets the total count of ducks in each duck house
+        public int GetTotal()
+        {
+            return ducks.Count;
+        }
+
 
         public override string ToString()
         {
