@@ -11,10 +11,12 @@ namespace Trestlebridge.Actions
         public static void CollectInput(Farm farm, IGrazing animal)
         {
             Utils.Clear();
-
+//Loops over the grazing fields and prints grazing fields if they have the capacity to store more animals
             for (int i = 0; i < farm.GrazingFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Grazing Field ({farm.GrazingFields[i].GetTotal()} animals)");
+               if(farm.GrazingFields[i].GetTotal() < farm.GrazingFields[i].Capacity){
+                    Console.WriteLine($"{i + 1}. Grazing Field ({farm.GrazingFields[i].GetTotal()} animals)");
+               }
             }
 
             Console.WriteLine();
