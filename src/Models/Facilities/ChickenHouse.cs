@@ -28,7 +28,7 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource(List<ICluck> resources)
         {
-            throw new NotImplementedException();
+            chickens.AddRange(resources);
         }
 
         //Converting chickens in chicken house to a string that can be printed in the farm report

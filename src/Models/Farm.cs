@@ -34,6 +34,9 @@ namespace Trestlebridge.Models
                 case "Chicken":
                     ChickenHouses[index].AddResource((ICluck)resource);
                     break;
+                case "Duck":
+                    DuckHouses[index].AddResource((IQuack)resource);
+                    break;
                 case "Sunflower":
                     NaturalFields[index].AddResource((ICompostProducing)resource);
                     break;
