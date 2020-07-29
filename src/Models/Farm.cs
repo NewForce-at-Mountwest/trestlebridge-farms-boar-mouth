@@ -24,6 +24,7 @@ namespace Trestlebridge.Models
         {
             Console.WriteLine(typeof(T).ToString());
             switch (typeof(T).ToString())
+            
             {
                 case "Cow":
                     GrazingFields[index].AddResource((IGrazing)resource);
