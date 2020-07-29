@@ -31,6 +31,12 @@ namespace Trestlebridge.Models.Facilities {
             chickens.AddRange(resources);
         }
 
+        //Gets the total count of chickens in each chicken house
+        public int GetTotalChickens()
+        {
+            return chickens.Count;
+        }
+
         //Converting chickens in chicken house to a string that can be printed in the farm report
         public override string ToString()
         {
