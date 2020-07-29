@@ -25,7 +25,7 @@ namespace Trestlebridge.Models.Facilities {
 
         public void AddResource(List<ICompostProducing> resources)
         {
-            throw new NotImplementedException();
+            plants.AddRange(resources);
         }
 
         public override string ToString()
