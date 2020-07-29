@@ -18,6 +18,7 @@ namespace Trestlebridge.Models.Facilities {
             }
         }
 
+        //Adding ducks to duck house
         public void AddResource (IQuack resource)
         {
             ducks.Add(resource);
