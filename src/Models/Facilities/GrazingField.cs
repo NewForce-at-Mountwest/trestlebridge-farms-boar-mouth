@@ -8,6 +8,18 @@ namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
     {
         private int _capacity = 20;
+
+        //TODO:: make a conditional preventing a user from adding an animal if the grazing field is already at capacity
+
+        // public void AddToFacility(IGrazing animalToAdd){
+        //     if (_animals.Count <= _capacity)
+        //     {
+        //         _animals.Add(animalToAdd);
+        //     }else{
+        //         Console.WriteLine("This facility is full :*(");
+        //     }
+
+        // }
         private Guid _id = Guid.NewGuid();
 
         private List<IGrazing> _animals = new List<IGrazing>();
