@@ -8,8 +8,12 @@ namespace Trestlebridge.Actions {
     public class PurchaseStock {
         public static void CollectInput (Farm farm) {
             Console.WriteLine ("1. Cow");
-            Console.WriteLine ("2. Ostrich");
-            Console.WriteLine ("3. Chicken");
+            Console.WriteLine ("2. Pig");
+            Console.WriteLine ("3. Goat");
+            Console.WriteLine ("4. Ostrich");
+            Console.WriteLine ("5. Sheep");
+            Console.WriteLine ("6. Duck");
+            Console.WriteLine ("7. Chicken");
 
 
             Console.WriteLine ();
@@ -22,11 +26,23 @@ namespace Trestlebridge.Actions {
             {
                 case 1:
                     ChooseGrazingField.CollectInput(farm, new Cow());
+                    //TODO:: a confirmation message should the almighty Trello cards request it.
+                    // Console.WriteLine("Thank you for placing a cow in a grazing field. Please press enter to return to the Main Menu");
+                    // Console.ReadLine();
                     break;
-                case 2:
+                case 2: 
+                    ChooseGrazingField.CollectInput(farm, new Pig());
+                    break;
+                case 3: 
+                    ChooseGrazingField.CollectInput(farm, new Goat());
+                    break;
+                case 4:
                     ChooseGrazingField.CollectInput(farm, new Ostrich());
                     break;
-                case 3:
+                case 5:
+                    ChooseGrazingField.CollectInput(farm, new Sheep());
+                    break;
+                case 6:
                     ChooseChickenHouse.CollectInput(farm, new Chicken());
                     break;
                 default:
