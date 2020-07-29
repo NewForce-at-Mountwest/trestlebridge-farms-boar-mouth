@@ -32,7 +32,7 @@ namespace Trestlebridge.Models.Facilities {
 
         public int GetTotal()
         {
-            throw new NotImplementedException();
+            return _plants.Count;
         }
 
         public override string ToString()
