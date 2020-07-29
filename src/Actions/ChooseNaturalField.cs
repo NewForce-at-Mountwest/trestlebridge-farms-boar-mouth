@@ -6,7 +6,7 @@ using Trestlebridge.Models.Animals;
 
 namespace Trestlebridge.Actions
 {
-    public class ChoosePlantingField
+    public class ChooseNaturalField
     {
         public static void CollectInput(Farm farm, ICompostProducing plant)
         {
@@ -26,7 +26,7 @@ namespace Trestlebridge.Actions
             int choice = Int32.Parse(Console.ReadLine());
 
             //Adds the plant/seed to the selected natural field
-            farm.NaturalFields[choice].AddResource(plant);
+            farm.NaturalFields[choice-1].AddResource(plant);
 
             /*
                 Couldn't get this to work. Can you?
