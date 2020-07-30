@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
-
+using System.Linq;
 
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
@@ -24,9 +24,40 @@ namespace Trestlebridge.Models.Facilities {
 
         private List<IGrazing> _animals = new List<IGrazing>();
 
+        public int CowCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Cow").Count();
+            return count;
+        }
+
+        public int OstrichCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Ostrich").Count();
+            return count;
+        }
+
+        public int GoatCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Goat").Count();
+            return count;
+        }
+
+         public int SheepCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Sheep").Count();
+            return count;
+        }
+
+        public int PigCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Pig").Count();
+            return count;
+        }
+
         //TODO:: GROUP BY TO PAIR COWS WITH ANIMALS IN GRAZING FIELD. 
         //TODO:: FIGURE OUT WHAT TO DO ABOUT GETTING A NEW LIST OF ANIMALS, AS THIS ONE IS PRIVATE.
-        //TODO:: GROUP KEY VALUE PAIRS
+        //TODO:: GROUP ANIMALS BY TYPE SINCE ALL HAVE A TYPE
+        
         //TODO:: LOOP OVER THE PAIRS TO GET COUNT IN CHOOSEGRAZINGFIELD.CS
 
         public double Capacity {
