@@ -15,7 +15,9 @@ namespace Trestlebridge.Actions
 
             for (int i = 0; i < farm.PlowedFields.Count; i++)
               {
+                if(farm.PlowedFields[i].GetTotal() < farm.PlowedFields[i].Capacity){
                 Console.WriteLine($"{i + 1}. Plowed Field");
+                }
             }
 
              Console.WriteLine();
