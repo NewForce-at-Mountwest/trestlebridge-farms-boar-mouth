@@ -24,6 +24,11 @@ namespace Trestlebridge.Models.Facilities {
 
         private List<IGrazing> _animals = new List<IGrazing>();
 
+        //TODO:: GROUP BY TO PAIR COWS WITH ANIMALS IN GRAZING FIELD. 
+        //TODO:: FIGURE OUT WHAT TO DO ABOUT GETTING A NEW LIST OF ANIMALS, AS THIS ONE IS PRIVATE.
+        //TODO:: GROUP KEY VALUE PAIRS
+        //TODO:: LOOP OVER THE PAIRS TO GET COUNT IN CHOOSEGRAZINGFIELD.CS
+
         public double Capacity {
             get {
                 return _capacity;
@@ -47,11 +52,18 @@ namespace Trestlebridge.Models.Facilities {
             throw new NotImplementedException();
         }
 
+       
+
         // Gets the total count of animals in each grazing field
         public int GetTotal()
         {
             return _animals.Count;
         }
+
+public List<GrazingField> Cows {get; } = new List<GrazingField>();
+//         public int GetTotalCows(){
+//             return Cows.Count;
+//         }
 
         public override string ToString()
         {
