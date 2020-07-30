@@ -15,12 +15,12 @@ namespace Trestlebridge.Actions
             //Prints each available natural field 
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Natural Field");
+                Console.WriteLine($"{i + 1}. Natural Field ({farm.NaturalFields[i].GetTotal()} plants)");
             }
 
             Console.WriteLine();
 
-            Console.WriteLine($"Place the seed where?");
+            Console.WriteLine($"Where would you like to place the seed?");
 
             Console.Write("> ");
             int choice = Int32.Parse(Console.ReadLine());
