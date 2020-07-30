@@ -15,7 +15,10 @@ namespace Trestlebridge.Actions
             //Prints each available natural field 
             for (int i = 0; i < farm.NaturalFields.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. Natural Field ({farm.NaturalFields[i].GetTotal()} plants)");
+                if(farm.NaturalFields[i].GetTotal() < farm.NaturalFields[i].Capacity){
+               Console.WriteLine($"{i + 1}. Natural Field ({farm.NaturalFields[i].GetTotal()} plants)");
+                }
+                
             }
 
             Console.WriteLine();
