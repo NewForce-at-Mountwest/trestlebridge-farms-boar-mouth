@@ -24,6 +24,7 @@ namespace Trestlebridge.Models.Facilities {
 
         private List<IGrazing> _animals = new List<IGrazing>();
 
+//functions to get the specific animal count => GroupBy would be better if I could figure it out
         public int CowCount(){
             int count = 0;
             count = _animals.Where(animal => animal.Type == "Cow").Count();
