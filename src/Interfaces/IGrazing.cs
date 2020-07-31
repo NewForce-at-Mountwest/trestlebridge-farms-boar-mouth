@@ -4,5 +4,7 @@ namespace Trestlebridge.Interfaces
     {
         double GrassPerDay { get; set; }
         void Graze();
+//pulls the animal types to use for the count
+        string Type{ get; }
     }
 }

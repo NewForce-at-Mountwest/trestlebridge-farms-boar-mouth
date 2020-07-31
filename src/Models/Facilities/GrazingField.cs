@@ -2,7 +2,7 @@ using System;
 using System.Text;
 using System.Collections.Generic;
 using Trestlebridge.Interfaces;
-
+using System.Linq;
 
 namespace Trestlebridge.Models.Facilities {
     public class GrazingField : IFacility<IGrazing>
@@ -23,6 +23,43 @@ namespace Trestlebridge.Models.Facilities {
         private Guid _id = Guid.NewGuid();
 
         private List<IGrazing> _animals = new List<IGrazing>();
+
+//functions to get the specific animal count => GroupBy would be better if I could figure it out
+        public int CowCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Cow").Count();
+            return count;
+        }
+
+        public int OstrichCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Ostrich").Count();
+            return count;
+        }
+
+        public int GoatCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Goat").Count();
+            return count;
+        }
+
+         public int SheepCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Sheep").Count();
+            return count;
+        }
+
+        public int PigCount(){
+            int count = 0;
+            count = _animals.Where(animal => animal.Type == "Pig").Count();
+            return count;
+        }
+
+        //TODO:: GROUP BY TO PAIR COWS WITH ANIMALS IN GRAZING FIELD. 
+        //TODO:: FIGURE OUT WHAT TO DO ABOUT GETTING A NEW LIST OF ANIMALS, AS THIS ONE IS PRIVATE.
+        //TODO:: GROUP ANIMALS BY TYPE SINCE ALL HAVE A TYPE
+        
+        //TODO:: LOOP OVER THE PAIRS TO GET COUNT IN CHOOSEGRAZINGFIELD.CS
 
         public double Capacity {
             get {
@@ -47,11 +84,18 @@ namespace Trestlebridge.Models.Facilities {
             throw new NotImplementedException();
         }
 
+       
+
         // Gets the total count of animals in each grazing field
         public int GetTotal()
         {
             return _animals.Count;
         }
+
+public List<GrazingField> Cows {get; } = new List<GrazingField>();
+//         public int GetTotalCows(){
+//             return Cows.Count;
+//         }
 
         public override string ToString()
         {
